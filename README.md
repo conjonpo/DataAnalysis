@@ -62,7 +62,19 @@ From this result we can see that Georgia State has had the lowest fill rate. Muc
 
 ### Which college football conferences do the best with filling their stadiums?
 
-This question can be answered in a similar way to the last question, but is instead grouped by conference instead of team. 
+This question can be answered in a similar way to the last question, but is instead grouped by conference instead of team. I think grouping teams together by their conference will give us more insight into why teams might have issues with attendance. Here is the code I used:
+
+```
+mean2 = teams[["Conference", "Fill Rate"]].groupby("Conference").mean()
+
+print(mean2[["Fill Rate"]].sort_values("Fill Rate", ascending=False).head(20))
+```
+
+And here are the results of that code:
+
+![Conference stadium fill rate](3.jpg)
+
+Nothing about this result is surprising to me. The SEC has been dominate in football for years now and the Sun Belt, Mid-American and CUSA conferences typically are the weakest conferences in Division 1-A college football.
 
 ## Helpful Links
 
