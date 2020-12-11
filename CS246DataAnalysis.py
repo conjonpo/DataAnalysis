@@ -17,8 +17,6 @@ mean2 = teams[["Conference", "Fill Rate"]].groupby("Conference").mean()
 
 print(mean2[["Fill Rate"]].sort_values("Fill Rate", ascending=False).head(20))
 
-print(mean2[["Fill Rate"]].sort_values("Fill Rate", ascending=False).head(20))
-
 #print(nba3[["firstName", "lastName", "year", "tmID", "points", "pos", "threeMade"]].sort_values("threeMade", ascending=False).head(20))
 
 #teams2 = teams["Fill Rate", "Conference", "Year"]
