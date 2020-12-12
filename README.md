@@ -74,7 +74,31 @@ And here are the results of that code:
 
 ![Conference stadium fill rate](3.jpg)
 
-Nothing about this result is surprising to me. The SEC has been dominate in football for years now and the Sun Belt, Mid-American and CUSA conferences typically are the weakest conferences in Division 1-A college football.
+Nothing about this result is surprising to me. The SEC has been dominate in football for years now and the Sun Belt, Mid-American and CUSA conferences typically are the weakest conferences in Division 1-A college football. FCS just means Division 1-AA.
+
+### Has attendance at games been declining across the sport?
+
+For this question I decided I wanted to add a line graph to convey if the sport has been truly been declining in attendance. However, this was tricky since for some reason the headers of the data sets I would try to make would have inconsistent headers. Here is the code and my result to answer this question:
+
+```
+teams_grouped_year = teams[["Fill Rate", "Year"]].groupby("Year").mean()
+
+print(teams_grouped_year)
+```
+
+![Fill rate by year across College Football](4.jpg)
+
+To make a graph of the data, I had to manually create a csv of the result above and then read it into the program. Here is my graph and the code to make the graph:
+
+```
+yearly = pd.read_csv("CFBYearlyAttendance.csv")
+
+sns.lineplot(data=yearly, x="Year", y="Fill_Rate").set_title("Average Fill Rate per Year")
+plt.show()
+```
+![Graph of yearly fill rate](5.jpg)
+
+I couldn't get the code to work correctly to change the scale for the years, but the graph still serves its purpose. We can see that there has been a decline in attendance in recent years, though I don't know if there has been enough time to call that a trend or not. I would say there's reasons to be concerned with the attendance numbers, but I don't believe college football is doomed by any means.
 
 ## Helpful Links
 
